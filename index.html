@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ŞAH REKLAM TABELA AJANS | Esenyurt Reklam ve Tabela Hizmetleri</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #1262B3;       /* Şah Mavi */
+            --secondary: #E32A26;     /* Şah Kırmızı / Turuncu */
+            --dark: #232223;          /* Şah Koyu Gri */
+            --light: #F4F6F9;
+            --white: #FFFFFF;
+            --shadow: 0 10px 30px rgba(0,0,0,0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            background-color: #fff;
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Container */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Navigation */
+        navbar {
+            background: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo img {
+            height: 60px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-btn {
+            background: var(--primary);
+            color: var(--white) !important;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        .nav-btn:hover {
+            background: var(--secondary);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1262B3 0%, #0d4680 100%);
+            color: var(--white);
+            padding: 100px 0 120px 0;
+            text-align: center;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            word-wrap: break-word;
+        }
+
+        .hero p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto 30px auto;
+            opacity: 0.9;
+        }
+
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: var(--secondary);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: #c81e1a;
+            transform: translateY(-2px);
+        }
+
+        .btn-whatsapp {
+            background: #25D366;
+            color: var(--white);
+        }
+
+        .btn-whatsapp:hover {
+            background: #1eb956;
+            transform: translateY(-2px);
+        }
+
+        /* Section Titles */
+        .section-title {
+            text-align: center;
+            margin: 60px 0 40px 0;
+        }
+
+        .section-title h2 {
+            font-size: 32px;
+            color: var(--dark);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--secondary);
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            border-bottom: 4px solid var(--primary);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-bottom-color: var(--secondary);
+        }
+
+        .service-card i {
+            font-size: 40px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        /* About Section */
+        .about {
+            background: var(--light);
+            padding: 60px 0;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        .badges {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background: var(--white);
+            padding: 10px 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+        }
+
+        .badge i {
+            color: var(--secondary);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 60px 0;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: var(--light);
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .contact-item i {
+            font-size: 24px;
+            color: var(--primary);
+            width: 40px;
+            text-align: center;
+        }
+
+        .contact-item a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-item a:hover {
+            color: var(--primary);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: var(--white);
+            padding: 50px 0 20px 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 8px;
+        }
+
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background: var(--secondary);
+        }
+
+        .footer-col p {
+            opacity: 0.7;
+            font-size: 14px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .social-links a {
+            color: var(--white);
+            background: rgba(255,255,255,0.1);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 14px;
+            opacity: 0.6;
+        }
+
+        /* Floating WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            z-index: 999;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        /* --- RESPONSIVE & TAŞMA ÖNLEME --- */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 992px) {
+            .about-grid, 
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+            }
+
+            .hero {
+                padding: 60px 0 80px 0;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .hero p {
+                font-size: 15px;
+            }
+
+            .hero-btns {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <navbar>
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <img src="logo.png" alt="Şah Reklam Tabela Ajans Logo">
+            </a>
+            <ul class="nav-links">
+                <li><a href="#hizmetler">Hizmetlerimiz</a></li>
+                <li><a href="#hakkimizda">Hakkımızda</a></li>
+                <li><a href="#iletisim">İletişim</a></li>
+                <li><a href="https://wa.me/905312987454" target="_blank" class="nav-btn"><i class="fab fa-whatsapp"></i> Hızlı Teklif</a></li>
+            </ul>
+        </div>
+    </navbar>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Kurumsal Tabela & Reklam Çözümleri</h1>
+            <p>Esenyurt ve tüm İstanbul genelinde markanıza değer katan tabela, dijital baskı ve reklam çözümleri sunuyoruz.</p>
+            <div class="hero-btns">
+                <a href="https://wa.me/905312987454" target="_blank" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp'tan İletişime Geçin</a>
+                <a href="#hizmetler" class="btn btn-primary"><i class="fas fa-list"></i> Hizmetlerimizi İnceleyin</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="container" id="hizmetler">
+        <div class="section-title">
+            <h2>Hizmetlerimiz</h2>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fas fa-store"></i>
+                <h3>Tabela Tasarım & İmalat</h3>
+                <p>Işıklı/ışıksız tabela, kutu harf, totem tabela ve çatı tabelası imalatı.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-print"></i>
+                <h3>Dijital Baskı Hizmetleri</h3>
+                <p>Branda, folyo baskı, Mesh, One Way Vision ve cephe giydirme çözümleri.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-car"></i>
+                <h3>Araç & Cephe Giydirme</h3>
+                <p>Kurumsal araç filosu giydirme ve dükkan vitrin/cephe grafik uygulamaları.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-paint-brush"></i>
+                <h3>Grafik Tasarım & Ajans</h3>
+                <p>Logo tasarımı, kurumsal kimlik çalışmaları ve profesyonel grafik çözümleri.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="hakkimizda">
+        <div class="container about-grid">
+            <div class="about-text">
+                <h3>ŞAH REKLAM TABELA AJANS</h3>
+                <p>Şah Reklam olarak Esenyurt Merkez'de bulunan imalathanemiz ve uzman ekibimizle işletmenizin açık hava reklam ihtiyaçlarına profesyonel çözümler üretiyoruz.</p>
+                <p>Tasarım aşamasından imalat ve montaja kadar tüm süreçleri kendi bünyemizde titizlikle yürütüyoruz.</p>
+                <div class="badges">
+                    <div class="badge"><i class="fas fa-check-circle"></i> Kaliteli Malzeme</div>
+                    <div class="badge"><i class="fas fa-check-circle"></i> Zamanında Teslimat</div>
+                    <div class="badge"><i class="fas fa-check-circle"></i> Uygun Fiyat</div>
+                </div>
+            </div>
+            <div class="about-img">
+                <img src="logo.png" alt="Şah Reklam Tabela Ajans" style="background: #fff; padding: 20px; border-radius: 10px; box-shadow: var(--shadow);">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="container contact" id="iletisim">
+        <div class="section-title">
+            <h2>İletişim</h2>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fab fa-whatsapp"></i>
+                    <div>
+                        <small>WhatsApp & Telefon</small><br>
+                        <a href="https://wa.me/905312987454" target="_blank">0531 298 74 54</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <small>E-Posta</small><br>
+                        <a href="mailto:bilgi@sahreklamtabelaajans.com">bilgi@sahreklamtabelaajans.com</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-globe"></i>
+                    <div>
+                        <small>Web Sitemiz</small><br>
+                        <a href="https://www.sahreklamtabelaajans.com" target="_blank">www.sahreklamtabelaajans.com</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <small>Adres / Konum</small><br>
+                        <strong>Esenyurt Merkez / İstanbul</strong>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Google Map -->
+            <div style="width: 100%; height: 100%; min-height: 300px; border-radius: 10px; overflow: hidden; box-shadow: var(--shadow);">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24075.89069527787!2d28.665800000000002!3d41.034200000000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14caa0842e4cf5e1%3A0x633513a96860d5b3!2sEsenyurt%2C%20%C4%B0stanbul!5e0!3m2!1str!2str!4v1700000000000!5m2!1str!2str" 
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h4>Şah Reklam Ajans</h4>
+                <p>Esenyurt ve çevresinde tabela, dijital baskı ve grafik tasarım hizmetlerinde güvenilir çözüm ortağınız.</p>
+                <div class="social-links">
+                    <a href="https://instagram.com/sahreklamtabelaajans" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://youtube.com/@ŞahReklamTabelaAjans" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="https://wa.me/905312987454" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Hızlı Bağlantılar</h4>
+                <p><a href="#hizmetler" style="color: #fff; text-decoration: none;">Hizmetlerimiz</a></p>
+                <p><a href="#hakkimizda" style="color: #fff; text-decoration: none;">Hakkımızda</a></p>
+                <p><a href="#iletisim" style="color: #fff; text-decoration: none;">İletişim</a></p>
+            </div>
+            <div class="footer-col">
+                <h4>Çalışma Saatleri</h4>
+                <p>Pazartesi - Cumartesi<br>08:30 - 19:30</p>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 ŞAH REKLAM TABELA AJANS - Tüm Hakları Saklıdır.
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/905312987454" class="whatsapp-float" target="_blank" title="WhatsApp Destek">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+</body>
+</html>
